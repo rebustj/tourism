@@ -23,10 +23,25 @@ struct Constants {
   )
   
   // MARK: - Data
-  static let categories: [String: String] = [
-    "sights": NSLocalizedString("sights", comment: ""),
-    "restaurants": NSLocalizedString("restaurants", comment: ""),
-    "hotels_tourism": NSLocalizedString("hotels_tourism", comment: "")
+  static let categories: [CategoryItem] = [
+    CategoryItem(id: PlaceCategory.sights.id,
+                 title: NSLocalizedString("sights", comment: ""),
+                 imageName: "sights_cat"),
+    CategoryItem(id: PlaceCategory.hotels.id,
+                 title: NSLocalizedString("hotels", comment: ""),
+                 imageName: "hotels_cat"),
+    CategoryItem(id: PlaceCategory.restaurants.id,
+                 title: NSLocalizedString("restaurants", comment: ""),
+                 imageName: "restaurants_cat"),
+    CategoryItem(id: OtherCategory.taxi.id,
+                 title: NSLocalizedString("taxi", comment: ""),
+                 imageName: "taxi_cat"),
+    CategoryItem(id: OtherCategory.orderFood.id,
+                 title: NSLocalizedString("order_food", comment: ""),
+                 imageName: "order_food_cat"),
+    CategoryItem(id: OtherCategory.hotline.id,
+                 title: NSLocalizedString("hotline", comment: ""),
+                 imageName: "hotline_cat")
   ]
   
   static let placeExample = PlaceFull(

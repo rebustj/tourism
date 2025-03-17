@@ -73,6 +73,7 @@ class TabBarController: UITabBarController {
     // creating shared viewModels()
     let homeVM = HomeViewModel(placesRepository: placesRepository)
     let categoriesVM = CategoriesViewModel(placesRepository: placesRepository)
+    let newCategoriesVM = NewCategoriesViewModel()
     let favoritesVM = FavoritesViewModel(placesRepository: placesRepository)
     let searchVM = SearchViewModel(placesRepository: placesRepository)
     let profileVM = ProfileViewModel(
@@ -92,8 +93,8 @@ class TabBarController: UITabBarController {
       goToMap: goToMap,
       onCreateRoute: goToMapAndCreateRoute
     )
-    let categoriesVC = CategoriesViewController(
-      categoriesVM: categoriesVM,
+    let categoriesVC = NewCategoriesViewController(
+      categoriesVM: newCategoriesVM,
       searchVM: searchVM,
       goToMap: goToMap,
       onCreateRoute: goToMapAndCreateRoute

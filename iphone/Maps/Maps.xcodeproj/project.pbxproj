@@ -588,9 +588,12 @@
 		CE64501D2C93F8350075A59B /* ReviewsPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64501C2C93F8350075A59B /* ReviewsPersistenceController.swift */; };
 		CE6450242C9772310075A59B /* DownloadProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6450232C9772310075A59B /* DownloadProgress.swift */; };
 		CE6450282C99572F0075A59B /* ImageStoreUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6450272C99572F0075A59B /* ImageStoreUtils.swift */; };
+		CE767E192D843A0800C6F463 /* OtherCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE767E182D843A0800C6F463 /* OtherCategory.swift */; };
 		CE8982032CB9588E00FC2D2E /* EmailBodyDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8982022CB9588E00FC2D2E /* EmailBodyDto.swift */; };
 		CE8982052CBCD46300FC2D2E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8982042CBCD46300FC2D2E /* ForgotPasswordViewController.swift */; };
 		CEA45BC42C9AE01000ABE6B2 /* DataSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA45BC32C9AE01000ABE6B2 /* DataSyncer.swift */; };
+		CEAD5D6F2D87E2740050A7A4 /* NewCategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD5D6E2D87E2670050A7A4 /* NewCategoriesViewModel.swift */; };
+		CEAD5D712D87E2960050A7A4 /* NewCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD5D702D87E2960050A7A4 /* NewCategoriesViewController.swift */; };
 		CED0E00E2C8ACBCA008C61CA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = CED0E00D2C8ACBCA008C61CA /* SDWebImageSwiftUI */; };
 		CED0E0112C8ACBE1008C61CA /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = CED0E0102C8ACBE1008C61CA /* CountryPickerView */; };
 		CED0E0172C8ACF0D008C61CA /* RoundedCornerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED0E0162C8ACF0D008C61CA /* RoundedCornerShape.swift */; };
@@ -1643,9 +1646,12 @@
 		CE64501C2C93F8350075A59B /* ReviewsPersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsPersistenceController.swift; sourceTree = "<group>"; };
 		CE6450232C9772310075A59B /* DownloadProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProgress.swift; sourceTree = "<group>"; };
 		CE6450272C99572F0075A59B /* ImageStoreUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStoreUtils.swift; sourceTree = "<group>"; };
+		CE767E182D843A0800C6F463 /* OtherCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCategory.swift; sourceTree = "<group>"; };
 		CE8982022CB9588E00FC2D2E /* EmailBodyDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailBodyDto.swift; sourceTree = "<group>"; };
 		CE8982042CBCD46300FC2D2E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		CEA45BC32C9AE01000ABE6B2 /* DataSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSyncer.swift; sourceTree = "<group>"; };
+		CEAD5D6E2D87E2670050A7A4 /* NewCategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoriesViewModel.swift; sourceTree = "<group>"; };
+		CEAD5D702D87E2960050A7A4 /* NewCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoriesViewController.swift; sourceTree = "<group>"; };
 		CED0E0162C8ACF0D008C61CA /* RoundedCornerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerShape.swift; sourceTree = "<group>"; };
 		CED0E0182C8AD57C008C61CA /* EmptyUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUI.swift; sourceTree = "<group>"; };
 		CED0E01A2C8B048C008C61CA /* AllPicsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPicsScreen.swift; sourceTree = "<group>"; };
@@ -3318,6 +3324,7 @@
 			children = (
 				529A5F412C86E108004FE4A1 /* Category.swift */,
 				529A5F432C86E118004FE4A1 /* PlaceCategory.swift */,
+				CE767E182D843A0800C6F463 /* OtherCategory.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3334,6 +3341,8 @@
 		529A5F652C8706C7004FE4A1 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				CEAD5D702D87E2960050A7A4 /* NewCategoriesViewController.swift */,
+				CEAD5D6E2D87E2670050A7A4 /* NewCategoriesViewModel.swift */,
 				529A5F672C8707CD004FE4A1 /* CategoriesViewController.swift */,
 				529A5F6F2C8720A8004FE4A1 /* CategoriesViewModel.swift */,
 			);
@@ -5044,6 +5053,7 @@
 				F6E2FF5A1E097BA00083EBEC /* MWMNightModeController.m in Sources */,
 				471A7BB8247FE3C300A0D4C1 /* URL+Query.swift in Sources */,
 				47F86D0120C93D8D00FEE291 /* TabViewController.swift in Sources */,
+				CEAD5D712D87E2960050A7A4 /* NewCategoriesViewController.swift in Sources */,
 				52E95F022C6B32E500A3FE2E /* ErrorResponse.swift in Sources */,
 				CE6450282C99572F0075A59B /* ImageStoreUtils.swift in Sources */,
 				99536113235DB86C008B218F /* InsetsLabel.swift in Sources */,
@@ -5316,6 +5326,7 @@
 				6741A9E71BF340DE002C974C /* MWMCircularProgressView.m in Sources */,
 				34AC8FDB1EFC07FE00E7F910 /* UILabel+NumberOfVisibleLines.swift in Sources */,
 				52ED91A52C72C50F000EE25B /* CurrencyRepositoryImpl.swift in Sources */,
+				CEAD5D6F2D87E2740050A7A4 /* NewCategoriesViewModel.swift in Sources */,
 				52A48AE92C888AD90081E522 /* ReviewsRepositoryImpl.swift in Sources */,
 				52ECA8132C8A0D7A00F213B3 /* ReviewsScreen.swift in Sources */,
 				ED79A5AD2BD7BA0F00952D1F /* UIApplication+LoadingOverlay.swift in Sources */,
@@ -5581,6 +5592,7 @@
 				3488B01A1E9D0B230068AFD8 /* UIColor+Modifications.swift in Sources */,
 				6741AA281BF340DE002C974C /* MWMAlert.mm in Sources */,
 				F6E2FF571E097BA00083EBEC /* MWMMobileInternetViewController.m in Sources */,
+				CE767E192D843A0800C6F463 /* OtherCategory.swift in Sources */,
 				993DF11323F6BDB100AC231A /* UITableViewRenderer.swift in Sources */,
 				34AB66261FC5AA330078E451 /* RouteManagerDimView.swift in Sources */,
 				CED0E0452C918ED4008C61CA /* Hash.swift in Sources */,
