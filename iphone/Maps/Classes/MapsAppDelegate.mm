@@ -31,6 +31,8 @@
 
 #include "base/assert.hpp"
 
+//#include "storage/storage.hpp"
+
 #include "private.h"
 // If you have a "missing header error" here, then please run configure.sh script in the root repo
 // folder.
@@ -107,6 +109,8 @@ using namespace osm_auth_ios;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   NSLog(@"application:didFinishLaunchingWithOptions: %@", launchOptions);
 
+  [self setTajikistanMap];
+  
   [HttpThreadImpl setDownloadIndicatorProtocol:self];
 
   InitLocalizedStrings();
@@ -126,6 +130,12 @@ using namespace osm_auth_ios;
   
   [[DeepLinkHandler shared] applicationDidFinishLaunching:launchOptions];
   // application:openUrl:options is called later for deep links if YES is returned.
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self handleNavigationForAppStartup];
+    [self moveToDushanbeIfNotInTjk];
+  });
+  
   return YES;
 }
 
@@ -211,11 +221,6 @@ using namespace osm_auth_ios;
   LOG(LINFO, ("applicationDidBecomeActive - begin"));
   auto & f = GetFramework();
   
-  [self handleNavigationForAppStartup];
-  
-  [self moveToDushanbeIfNotInTjk];
-  
-  
   f.EnterForeground();
   [self.mapViewController onGetFocus:YES];
   f.SetRenderingEnabled();
@@ -256,6 +261,20 @@ using namespace osm_auth_ios;
                                        ms::LatLon(41.196740, 66.949922),
                                        ms::LatLon(36.483415, 75.400353));
   if (!isInBounds) [MapViewController setViewportToDushanbe];
+}
+
+- (void) setTajikistanMap {
+  BOOL fileExists = [FileManagerHelper fileExistsInDocumentsWithSubdirectory:@"240429"
+                                                                   fileName:@"Tajikistan"
+                                                             fileExtension:@"mwm"];
+  
+  if (!fileExists) {
+    [FileManagerHelper copyProjectFileToDocumentsWithFileName:@"Tajikistan"
+                                                    fileExtension:@"mwm"
+                                                    toSubdirectory:@"240429"];
+
+    GetFramework().LoadMapsSync();
+  }
 }
 
 BOOL isLocationInBounds1(ms::LatLon location, ms::LatLon topLeft, ms::LatLon bottomRight) {
