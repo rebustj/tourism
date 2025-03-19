@@ -1,11 +1,11 @@
 struct SignInRequestDTO: Codable {
     let email: String
-    let password: String
+    let google_id: String
 }
 
 extension SignInRequestDTO {
     init(from domainModel: SignInRequest) {
         self.email = domainModel.email
-        self.password = domainModel.password
+        self.google_id = domainModel.password
     }
 }

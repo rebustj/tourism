@@ -2,9 +2,9 @@ import Foundation
 
 struct User: Codable, Hashable {
   let id: Int64
-  let name: String
+  let name: String?
   let pfpUrl: String?
-  let countryCodeName: String
+  let countryCodeName: String?
   
   func toUserEntity() -> UserEntity {
     return UserEntity(

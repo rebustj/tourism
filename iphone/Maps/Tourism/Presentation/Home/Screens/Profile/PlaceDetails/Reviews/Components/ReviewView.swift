@@ -70,10 +70,10 @@ struct UserView: View {
           .clipShape(Circle())
       }
       HStack() {
-        Text(user.name)
+        Text(user.name ?? "")
           .textStyle(TextStyle.h4)
           .foregroundColor(Color.onBackground)
-        UICountryFlagView(code: user.countryCodeName)
+        UICountryFlagView(code: user.countryCodeName ?? "")
           .scaledToFit()
           .frame(height: 30)
       }
